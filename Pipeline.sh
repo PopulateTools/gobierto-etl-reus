@@ -5,7 +5,7 @@ source .env
 
 GOBIERTO_ETL_UTILS=$BASE_DIR/gobierto-etl-utils
 REUS_ETL=$BASE_DIR/gobierto-etl-reus
-GOBIERTO=$BASE_DIR/gobierto
+GOBIERTO=/var/www/gobierto/current
 WORKING_DIR=/tmp/reus
 REUS_INE_CODE=43123
 YEARS=2018
@@ -63,4 +63,8 @@ cd $GOBIERTO; bin/rails runner $GOBIERTO_ETL_UTILS/operations/gobierto_budgets/a
 
 # Load > Publish activity
 cd $GOBIERTO; bin/rails runner $GOBIERTO_ETL_UTILS/operations/gobierto/publish-activity/run.rb budgets_updated $WORKING_DIR/organization.id.txt
+
+# Clear cache
+cd $GOBIERTO; bin/rails runner $GOBIERTO_ETL_UTILS/operations/gobierto/clear-cache/run.rb
+
 
