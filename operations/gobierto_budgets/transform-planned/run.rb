@@ -69,14 +69,6 @@ def process_row(row, functional_data, economic_data, kind)
     end
   end
 
-  # Level 4
-  economic_code_l4 = economic_code.slice(0..2) + '-' + economic_code.slice(3..4)
-  if kind == GobiertoData::GobiertoBudgets::EXPENSE
-    functional_code_l4 = functional_code.slice(0..2) + '-' + functional_code.slice(3..4)
-    functional_data[functional_code_l4] ? functional_data[functional_code_l4] += amount : functional_data[functional_code_l4] = amount
-  end
-  economic_data[economic_code_l4] ? economic_data[economic_code_l4] += amount : economic_data[economic_code_l4] = amount
-
   # Level 3
   economic_code_l3 = economic_code[0..2]
   if kind == GobiertoData::GobiertoBudgets::EXPENSE
