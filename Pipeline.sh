@@ -7,8 +7,7 @@ source .env
 
 GOBIERTO_ETL_UTILS=$BASE_DIR/gobierto-etl-utils
 REUS_ETL=$BASE_DIR/gobierto-etl-reus
-GOBIERTO=$DEV_DIR/gobierto
-# GOBIERTO=/var/www/gobierto/current
+GOBIERTO=/var/www/gobierto/current
 WORKING_DIR=/tmp/reus
 REUS_INE_CODE=43123
 
