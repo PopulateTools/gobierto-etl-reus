@@ -16,3 +16,10 @@ This repository relies heavily in [gobierto_data](https://github.com/PopulateToo
 - import-planned-budgets
 - import-executed-budgets
 
+## How to add new data
+
+Follow these changes in `Pipeline.sh` file:
+
+1. Edit `YEARS` variable and add a new year
+2. Edit `EXPENSES_PLANNED_URL`, `EXPENSES_EXECUTED_URL`, `INCOME_PLANNED_URL` and `INCOME_EXECUTED_URL` variables with the urls of the JSON files of the new year.
+
