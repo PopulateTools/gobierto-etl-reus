@@ -58,7 +58,7 @@ def normalize_data(data, kind)
 end
 
 def process_row(row, functional_data, economic_data, kind)
-  amount = kind == GobiertoData::GobiertoBudgets::INCOME ? row["PREVISIONS TOTALS"].to_f : row["OBLIGACIONS RECONEGUDES"].to_f
+  amount = kind == GobiertoData::GobiertoBudgets::INCOME ? row["RECAPTACIÓ LÍQUIDA"].to_f : row["OBLIGACIONS RECONEGUDES"].to_f
   amount = amount.round(2)
   functional_code = row["PROGRAMA"].try(:strip)
   economic_code   = row["ECONÒMICA"].strip
