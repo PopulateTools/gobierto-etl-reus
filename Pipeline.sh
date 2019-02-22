@@ -26,6 +26,8 @@ INCOME_PLANNED_URL[2019]=https://opendata.reus.cat/dataset/1e25767b-49b9-4431-b7
 
 INCOME_EXECUTED_URL[2018]=https://opendata.reus.cat/dataset/68a21aa9-0e44-4d8e-ae73-ffdff6bac4fe/resource/ab77dad1-ddc4-4622-8e98-e35eaf6ec3f5/download/c3271b2d-1a4e-4dce-9b9f-d22f40b5fa65.json
 INCOME_EXECUTED_URL[2019]=https://opendata.reus.cat/dataset/68a21aa9-0e44-4d8e-ae73-ffdff6bac4fe/resource/2b1d6adc-b15a-4766-a3e2-27db25abd760/download/37b1baba-c07f-4459-b3bc-63f67c0444d2.json
+
+BUDGETS_UPDATED_DATE_DATASET_URL=https://opendata.reus.cat/api/3/action/package_show?id=seguiment-pressupostari-de-despeses-de-l-ajuntament-de-reus
 ## End data files
 
 rm -rf $WORKING_DIR
@@ -82,7 +84,7 @@ done
 cd $GOBIERTO_ETL_UTILS; ruby operations/gobierto_budgets/bubbles/run.rb $WORKING_DIR/organization.id.txt
 
 # Load > Publish activity
-cd $GOBIERTO; bin/rails runner $GOBIERTO_ETL_UTILS/operations/gobierto/publish-activity/run.rb budgets_updated $WORKING_DIR/organization.id.txt
+cd $GOBIERTO; bin/rails runner $REUS_ETL/operations/gobierto_budgets/publish-activity/run.rb budgets_updated $BUDGETS_UPDATED_DATE_DATASET_URL $WORKING_DIR/organization.id.txt
 
 # Clear cache
 cd $GOBIERTO; bin/rails runner $GOBIERTO_ETL_UTILS/operations/gobierto/clear-cache/run.rb
