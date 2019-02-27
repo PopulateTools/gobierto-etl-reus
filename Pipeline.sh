@@ -59,6 +59,10 @@ for year in ${YEARS[*]}; do
   cd $REUS_ETL; ruby operations/gobierto_budgets/transform-planned/run.rb $WORKING_DIR/expenses-planned.json $WORKING_DIR/expenses-planned-transformed.json E $year
   cd $REUS_ETL; ruby operations/gobierto_budgets/transform-planned/run.rb $WORKING_DIR/income-planned.json $WORKING_DIR/income-planned-transformed.json I $year
 
+  # Transform > Transform planned updated budgets data files
+  cd $REUS_ETL; ruby operations/gobierto_budgets/transform-planned-updated/run.rb $WORKING_DIR/expenses-executed.json $WORKING_DIR/expenses-planned-updated-transformed.json E $year
+  cd $REUS_ETL; ruby operations/gobierto_budgets/transform-planned-updated/run.rb $WORKING_DIR/income-executed.json $WORKING_DIR/income-planned-updated-transformed.json I $year
+
   ## # Transform > Transform executed budgets data files
   cd $REUS_ETL; ruby operations/gobierto_budgets/transform-executed/run.rb $WORKING_DIR/expenses-executed.json $WORKING_DIR/expenses-executed-transformed.json E $year
   cd $REUS_ETL; ruby operations/gobierto_budgets/transform-executed/run.rb $WORKING_DIR/income-executed.json $WORKING_DIR/income-executed-transformed.json I $year
@@ -66,6 +70,10 @@ for year in ${YEARS[*]}; do
   # Load > Import planned budgets
   cd $REUS_ETL; ruby operations/gobierto_budgets/import-planned-budgets/run.rb $WORKING_DIR/expenses-planned-transformed.json $year
   cd $REUS_ETL; ruby operations/gobierto_budgets/import-planned-budgets/run.rb $WORKING_DIR/income-planned-transformed.json $year
+
+  # Load > Import planned updated budgets
+  cd $GOBIERTO_ETL_UTILS; ruby operations/gobierto_budgets/import-planned-budgets-updated/run.rb $WORKING_DIR/expenses-planned-updated-transformed.json $year
+  cd $GOBIERTO_ETL_UTILS; ruby operations/gobierto_budgets/import-planned-budgets-updated/run.rb $WORKING_DIR/income-planned-updated-transformed.json $year
 
   # Load > Import executed budgets
   cd $REUS_ETL; ruby operations/gobierto_budgets/import-executed-budgets/run.rb $WORKING_DIR/expenses-executed-transformed.json $year
