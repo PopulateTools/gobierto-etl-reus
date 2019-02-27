@@ -57,7 +57,7 @@ if organizations_ids.any?
     Site.where(organization_id: organization_id).find_each do |site|
       site.activities.where(action: "gobierto_budgets.budgets_updated").destroy_all
       a = site.activities.create! action: "gobierto_budgets.budgets_updated", subject: site, subject_ip: "127.0.0.1", admin_activity: false
-      a.created_at = time - 1.month
+      a.created_at = time
       a.save!
     end
   end
