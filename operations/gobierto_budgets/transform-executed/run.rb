@@ -27,7 +27,7 @@ end
 
 input_file = ARGV[0]
 output_file = ARGV[1]
-kind = ARGV[2] == 'I' ? GobiertoData::GobiertoBudgets::INCOME : GobiertoData::GobiertoBudgets::EXPENSE
+kind = ARGV[2] == 'I' ? GobiertoBudgetsData::GobiertoBudgets::INCOME : GobiertoBudgetsData::GobiertoBudgets::EXPENSE
 year = ARGV[3].to_i
 
 puts "[START] transform-executed/run.rb with file=#{input_file} output=#{output_file} year=#{year}"
@@ -35,7 +35,7 @@ puts "[START] transform-executed/run.rb with file=#{input_file} output=#{output_
 json_data = JSON.parse(File.read(input_file))
 
 place = INE::Places::Place.find_by_slug('reus')
-population = GobiertoData::GobiertoBudgets::Population.get(place.id, year)
+population = GobiertoBudgetsData::GobiertoBudgets::Population.get(place.id, year)
 
 base_data = {
   organization_id: place.id,
@@ -58,7 +58,7 @@ def normalize_data(data, kind)
 end
 
 def process_row(row, functional_data, economic_data, kind)
-  amount = kind == GobiertoData::GobiertoBudgets::INCOME ? row["DRETS RECONEGUTS NETS"].to_f : row["OBLIGACIONS RECONEGUDES"].to_f
+  amount = kind == GobiertoBudgetsData::GobiertoBudgets::INCOME ? row["DRETS RECONEGUTS NETS"].to_f : row["OBLIGACIONS RECONEGUDES"].to_f
   amount = amount.round(2)
   functional_code = row["PROGRAMA"].try(:strip)
   economic_code   = row["ECONÒMICA"].strip
@@ -71,7 +71,7 @@ def process_row(row, functional_data, economic_data, kind)
 
   # Level 3
   economic_code_l3 = economic_code[0..2]
-  if kind == GobiertoData::GobiertoBudgets::EXPENSE
+  if kind == GobiertoBudgetsData::GobiertoBudgets::EXPENSE
     functional_code_l3 = functional_code[0..2]
     functional_data[functional_code_l3] ? functional_data[functional_code_l3] += amount : functional_data[functional_code_l3] = amount
   end
@@ -79,7 +79,7 @@ def process_row(row, functional_data, economic_data, kind)
 
   # Level 2
   economic_code_l2 = economic_code[0..1]
-  if kind == GobiertoData::GobiertoBudgets::EXPENSE
+  if kind == GobiertoBudgetsData::GobiertoBudgets::EXPENSE
     functional_code_l2 = functional_code[0..1]
     functional_data[functional_code_l2] ? functional_data[functional_code_l2] += amount : functional_data[functional_code_l2] = amount
   end
@@ -87,7 +87,7 @@ def process_row(row, functional_data, economic_data, kind)
 
   # Level 1
   economic_code_l1 = economic_code[0]
-  if kind == GobiertoData::GobiertoBudgets::EXPENSE
+  if kind == GobiertoBudgetsData::GobiertoBudgets::EXPENSE
     functional_code_l1 = functional_code[0]
     functional_data[functional_code_l1] ? functional_data[functional_code_l1] += amount : functional_data[functional_code_l1] = amount
   end
@@ -122,8 +122,8 @@ end
 
 functional_data, economic_data = normalize_data(json_data, kind)
 
-output_data = hydratate(data: functional_data, area_name: GobiertoData::GobiertoBudgets::FUNCTIONAL_AREA_NAME, base_data: base_data, kind: kind) +
-  hydratate(data: economic_data, area_name: GobiertoData::GobiertoBudgets::ECONOMIC_AREA_NAME, base_data: base_data, kind: kind)
+output_data = hydratate(data: functional_data, area_name: GobiertoBudgetsData::GobiertoBudgets::FUNCTIONAL_AREA_NAME, base_data: base_data, kind: kind) +
+  hydratate(data: economic_data, area_name: GobiertoBudgetsData::GobiertoBudgets::ECONOMIC_AREA_NAME, base_data: base_data, kind: kind)
 
 File.write(output_file, output_data.to_json)
 
