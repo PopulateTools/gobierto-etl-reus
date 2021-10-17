@@ -32,17 +32,17 @@ if json_data.length < 1
   exit(-1)
 end
 
-row = json_data.first
-
-unless row.is_a?(Hash)
-  puts "[ERROR] row is not a Hash"
+unless json_data.is_a?(Hash)
+  puts "[ERROR] data is not a Hash"
   exit(-1)
 end
 
-if row.keys.sort != ["ANY", "CRÈDITS INICIALS", "DESCRIPCIÓ PARTIDA", "ECONÒMICA", "ORGÀNICA", "PROGRAMA"] &&
-    row.keys.sort != ["ANY", "CRÈDITS INICIALS", "CRÈDITS TOTALS CONSIGNATS", "DESCRIPCIÓ PARTIDA", "DISPOSICIONS O COMPROMISOS", "ECONÒMICA", "MODIFICACIONS CRÈDIT", "OBLIGACIONS RECONEGUDES", "ORGÀNICA", "PAGAMENTS REALITZATS", "PROGRAMA"]  &&
-    row.keys.sort != ["ANY", "DESCRIPCIÓ PARTIDA", "DRETS RECONEGUTS NETS", "ECONÒMICA", "ORGÀNICA", "PREVISIONS INICIALS", "PREVISIONS TOTALS", "RECAPTACIÓ LÍQUIDA", "TOTAL MODIFICACIONS"] &&
-    row.keys.sort != ["ANY", "DESCRIPCIÓ PARTIDA", "ECONÒMICA", "ORGÀNICA", "PREVISIONS INGRESSOS INICIALS"]
+columns = json_data["fields"].map{ |h| h["id"] }.sort
+
+if columns != ["ANY", "CRÈDITS INICIALS", "DESCRIPCIÓ PARTIDA", "ECONÒMICA", "ORGÀNICA", "PROGRAMA", "_id"] &&
+   columns != ["ANY", "CRÈDITS INICIALS", "CRÈDITS TOTALS CONSIGNATS", "DESCRIPCIÓ PARTIDA", "DISPOSICIONS O COMPROMISOS", "ECONÒMICA", "MODIFICACIONS CRÈDIT", "OBLIGACIONS RECONEGUDES", "ORGÀNICA", "PAGAMENTS REALITZATS", "PROGRAMA", "_id"]  &&
+   columns != ["ANY", "DESCRIPCIÓ PARTIDA", "DRETS RECONEGUTS NETS", "ECONÒMICA", "ORGÀNICA", "PREVISIONS INICIALS", "PREVISIONS TOTALS", "RECAPTACIÓ LÍQUIDA", "TOTAL MODIFICACIONS", "_id"] &&
+   columns != ["ANY", "DESCRIPCIÓ PARTIDA", "ECONÒMICA", "ORGÀNICA", "PREVISIONS INGRESSOS INICIALS", "_id"]
 
   puts "[ERROR] row columns are not the expected"
   exit(-1)
