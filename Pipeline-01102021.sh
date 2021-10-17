@@ -12,28 +12,24 @@ WORKING_DIR=/tmp/reus
 REUS_INE_CODE=43123
 
 # Years variable
-YEARS=( 2018 2019 2020 2021 )
+YEARS=( 2018 2019 2020 )
 
 # Data files
-EXPENSES_PLANNED_URL[2018]=https://opendata.reus.cat/datastore/dump/8f2155cc-7c25-4781-a3ba-036bd7c25cb7?format=json
-EXPENSES_PLANNED_URL[2019]=https://opendata.reus.cat/datastore/dump/73bdb636-0390-48f1-8d7f-388508f5d5a2?format=json
-EXPENSES_PLANNED_URL[2020]=https://opendata.reus.cat/datastore/dump/e04c6544-a5e6-4b9e-8d7b-be99b400c76b?format=json
-EXPENSES_PLANNED_URL[2021]=https://opendata.reus.cat/datastore/dump/c6e335bd-3da6-4f59-ac99-316f40d41b84?format=json
+EXPENSES_PLANNED_URL[2018]=https://opendata.reus.cat/dataset/2405134b-2af3-47b5-9cab-1cfb42b8a894/resource/e5b92612-5f9d-4a94-abbe-e6394909e532/download/8f2155cc-7c25-4781-a3ba-036bd7c25cb7.json
+EXPENSES_PLANNED_URL[2019]=https://opendata.reus.cat/dataset/2405134b-2af3-47b5-9cab-1cfb42b8a894/resource/9ca154c3-203b-43f2-8570-12abbf6327ae/download/73bdb636-0390-48f1-8d7f-388508f5d5a2.json
+EXPENSES_PLANNED_URL[2020]=https://opendata.reus.cat/dataset/2405134b-2af3-47b5-9cab-1cfb42b8a894/resource/14a5930c-917a-455e-9780-b65218843400/download/e04c6544-a5e6-4b9e-8d7b-be99b400c76b.json
 
-EXPENSES_EXECUTED_URL[2018]=https://opendata.reus.cat/datastore/dump/d1280a6a-11be-4d3d-8d55-15393ddccb33?format=json
-EXPENSES_EXECUTED_URL[2019]=https://opendata.reus.cat/datastore/dump/4af822fb-0d3b-478d-a54a-3eadc7ceb265?format=json
-EXPENSES_EXECUTED_URL[2020]=https://opendata.reus.cat/datastore/dump/70720657-657c-4708-af81-040ffe7530b4?format=json
-EXPENSES_EXECUTED_URL[2021]=https://opendata.reus.cat/datastore/dump/7bcecd44-d4bd-44a6-8c7d-27ea1977d029?format=json
+EXPENSES_EXECUTED_URL[2018]=https://opendata.reus.cat/dataset/a7848204-7d13-4283-b7b4-32e02b5d2627/resource/0e743d72-99c7-4122-9a9d-9ab64d1ef308/download/d1280a6a-11be-4d3d-8d55-15393ddccb33.json
+EXPENSES_EXECUTED_URL[2019]=https://opendata.reus.cat/dataset/a7848204-7d13-4283-b7b4-32e02b5d2627/resource/5d1425cb-fcc4-4985-b5f7-4dce2ae896f2/download/4af822fb-0d3b-478d-a54a-3eadc7ceb265.json
+EXPENSES_EXECUTED_URL[2020]=https://opendata.reus.cat/dataset/a7848204-7d13-4283-b7b4-32e02b5d2627/resource/20c51cf9-bf66-4800-bf81-1c0daada9a8d/download/70720657-657c-4708-af81-040ffe7530b4.json
 
-INCOME_PLANNED_URL[2018]=https://opendata.reus.cat/datastore/dump/eac43498-91e9-4438-9122-9fe66459b625?format=json
-INCOME_PLANNED_URL[2019]=https://opendata.reus.cat/datastore/dump/ee89210c-4e1e-487f-9c95-f1fcb3fbe5e7?format=json
-INCOME_PLANNED_URL[2020]=https://opendata.reus.cat/datastore/dump/25347a34-5813-4cde-9cd8-41f87c5cfce9?format=json
-INCOME_PLANNED_URL[2021]=https://opendata.reus.cat/datastore/dump/fa2a2b23-33f3-4b9f-865b-56fb8f983d08?format=json
+INCOME_PLANNED_URL[2018]=https://opendata.reus.cat/dataset/1e25767b-49b9-4431-b7ba-6d12cecceac3/resource/3aaa81d6-25ca-465e-9ffc-59d2ba04de23/download/eac43498-91e9-4438-9122-9fe66459b625.json
+INCOME_PLANNED_URL[2019]=https://opendata.reus.cat/dataset/1e25767b-49b9-4431-b7ba-6d12cecceac3/resource/0dbd3c4d-ba2c-44a8-a2a1-92890f0ce758/download/ee89210c-4e1e-487f-9c95-f1fcb3fbe5e7.json
+INCOME_PLANNED_URL[2020]=https://opendata.reus.cat/dataset/1e25767b-49b9-4431-b7ba-6d12cecceac3/resource/ad663a17-8b89-4a05-a194-3e055ec0a411/download/25347a34-5813-4cde-9cd8-41f87c5cfce9.json
 
-INCOME_EXECUTED_URL[2018]=https://opendata.reus.cat/datastore/dump/c3271b2d-1a4e-4dce-9b9f-d22f40b5fa65?format=json
-INCOME_EXECUTED_URL[2019]=https://opendata.reus.cat/datastore/dump/37b1baba-c07f-4459-b3bc-63f67c0444d2?format=json
-INCOME_EXECUTED_URL[2020]=https://opendata.reus.cat/datastore/dump/6ff99726-9564-4c1e-9c6d-6ddf4cd5c802?format=json
-INCOME_EXECUTED_URL[2021]=https://opendata.reus.cat/datastore/dump/7e5e556c-6ef0-4815-a53a-9b16c451d3c6?format=json
+INCOME_EXECUTED_URL[2018]=https://opendata.reus.cat/dataset/68a21aa9-0e44-4d8e-ae73-ffdff6bac4fe/resource/ab77dad1-ddc4-4622-8e98-e35eaf6ec3f5/download/c3271b2d-1a4e-4dce-9b9f-d22f40b5fa65.json
+INCOME_EXECUTED_URL[2019]=https://opendata.reus.cat/dataset/68a21aa9-0e44-4d8e-ae73-ffdff6bac4fe/resource/2b1d6adc-b15a-4766-a3e2-27db25abd760/download/37b1baba-c07f-4459-b3bc-63f67c0444d2.json
+INCOME_EXECUTED_URL[2020]=https://opendata.reus.cat/dataset/68a21aa9-0e44-4d8e-ae73-ffdff6bac4fe/resource/362d41c6-3adf-4aa9-887e-78e27d89cd29/download/6ff99726-9564-4c1e-9c6d-6ddf4cd5c802.json
 
 BUDGETS_UPDATED_DATE_DATASET_URL=https://opendata.reus.cat/api/3/action/package_show?id=seguiment-pressupostari-de-despeses-de-l-ajuntament-de-reus
 ## End data files
