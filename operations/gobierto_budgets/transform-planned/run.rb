@@ -4,6 +4,7 @@ require "bundler/setup"
 Bundler.require
 
 require "json"
+require "byebug"
 
 # Usage:
 #
@@ -32,7 +33,9 @@ year = ARGV[3].to_i
 
 puts "[START] transform-planned/run.rb with file=#{input_file} output=#{output_file} year=#{year}"
 
-json_data = JSON.parse(File.read(input_file))
+raw_data = JSON.parse(File.read(input_file))
+columns = raw_data["fields"].map{ |h| h["id"] }
+json_data = raw_data["records"].map{ |r| Hash[columns.zip(r)] }
 
 place = INE::Places::Place.find_by_slug('reus')
 population = GobiertoBudgetsData::GobiertoBudgets::Population.get(place.id, year)
@@ -60,8 +63,8 @@ end
 def process_row(row, functional_data, economic_data, kind)
   amount = kind == GobiertoBudgetsData::GobiertoBudgets::INCOME ? row["PREVISIONS INGRESSOS INICIALS"].to_f : row["CRÈDITS INICIALS"].to_f
   amount = amount.round(2)
-  functional_code = row["PROGRAMA"].try(:strip)
-  economic_code   = row["ECONÒMICA"].strip
+  functional_code = row["PROGRAMA"].to_s.try(:strip)
+  economic_code   = row["ECONÒMICA"].to_s.try(:strip)
 
   if !functional_code.nil? && functional_code.length != economic_code.length
     if functional_code.length == 5 && economic_code.length == 3
