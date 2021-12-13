@@ -66,6 +66,10 @@ def process_row(row, functional_data, economic_data, kind)
   functional_code = row["PROGRAMA"].to_s.try(:strip)
   economic_code   = row["ECONÒMICA"].to_s.try(:strip)
 
+  if functional_code.to_i == 11
+    functional_code = "011"
+  end
+
   if !functional_code.nil? && functional_code.length != economic_code.length
     if functional_code.length == 5 && economic_code.length == 3
       economic_code += "00"
