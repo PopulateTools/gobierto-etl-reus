@@ -43,6 +43,9 @@ mkdir $WORKING_DIR
 echo $REUS_INE_CODE > $WORKING_DIR/organization.id.txt
 
 for year in ${YEARS[*]}; do
+  #Clear existing budgets
+  cd $GOBIERTO_ETL_UTILS; ruby operations/gobierto_budgets/clear-budgets/run.rb $WORKING_DIR/organization.id.txt $year
+
   echo "- Importing year "$year
 
   # Extract > Download data sources
