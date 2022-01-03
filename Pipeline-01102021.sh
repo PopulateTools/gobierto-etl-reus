@@ -101,4 +101,4 @@ cd $GOBIERTO_ETL_UTILS; ruby operations/gobierto_budgets/bubbles/run.rb $WORKING
 cd $GOBIERTO; bin/rails runner $REUS_ETL/operations/gobierto_budgets/publish-activity/run.rb budgets_updated $BUDGETS_UPDATED_DATE_DATASET_URL $WORKING_DIR/organization.id.txt
 
 # Clear cache
-cd $GOBIERTO; bin/rails runner $GOBIERTO_ETL_UTILS/operations/gobierto/clear-cache/run.rb
+cd $GOBIERTO; bin/rails runner $GOBIERTO_ETL_UTILS/operations/gobierto/clear-cache/run.rb --site-organization-id "$REUS_INE_CODE" --namespace "GobiertoBudgets"
