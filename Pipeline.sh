@@ -19,25 +19,25 @@ EXPENSES_PLANNED_URL[2018]=https://opendata.reus.cat/datastore/dump/8f2155cc-7c2
 EXPENSES_PLANNED_URL[2019]=https://opendata.reus.cat/datastore/dump/73bdb636-0390-48f1-8d7f-388508f5d5a2?format=json
 EXPENSES_PLANNED_URL[2020]=https://opendata.reus.cat/datastore/dump/e04c6544-a5e6-4b9e-8d7b-be99b400c76b?format=json
 EXPENSES_PLANNED_URL[2021]=https://opendata.reus.cat/datastore/dump/c6e335bd-3da6-4f59-ac99-316f40d41b84?format=json
-EXPENSES_PLANNED_URL[2022]=https://opendata.reus.cat/datastore/dump/789027e1-bf33-4f34-8a38-cd4db12e3c2b?format=json&bom=true
+EXPENSES_PLANNED_URL[2022]=https://opendata.reus.cat/datastore/dump/789027e1-bf33-4f34-8a38-cd4db12e3c2b?format=json
 
 EXPENSES_EXECUTED_URL[2018]=https://opendata.reus.cat/datastore/dump/d1280a6a-11be-4d3d-8d55-15393ddccb33?format=json
 EXPENSES_EXECUTED_URL[2019]=https://opendata.reus.cat/datastore/dump/4af822fb-0d3b-478d-a54a-3eadc7ceb265?format=json
 EXPENSES_EXECUTED_URL[2020]=https://opendata.reus.cat/datastore/dump/70720657-657c-4708-af81-040ffe7530b4?format=json
 EXPENSES_EXECUTED_URL[2021]=https://opendata.reus.cat/datastore/dump/7bcecd44-d4bd-44a6-8c7d-27ea1977d029?format=json
-EXPENSES_EXECUTED_URL[2022]=https://opendata.reus.cat/datastore/dump/2bb6dd47-b259-484c-97a8-e6a1355b3f7f?format=json&bom=true
+EXPENSES_EXECUTED_URL[2022]=https://opendata.reus.cat/datastore/dump/2bb6dd47-b259-484c-97a8-e6a1355b3f7f?format=json
 
 INCOME_PLANNED_URL[2018]=https://opendata.reus.cat/datastore/dump/eac43498-91e9-4438-9122-9fe66459b625?format=json
 INCOME_PLANNED_URL[2019]=https://opendata.reus.cat/datastore/dump/ee89210c-4e1e-487f-9c95-f1fcb3fbe5e7?format=json
 INCOME_PLANNED_URL[2020]=https://opendata.reus.cat/datastore/dump/25347a34-5813-4cde-9cd8-41f87c5cfce9?format=json
 INCOME_PLANNED_URL[2021]=https://opendata.reus.cat/datastore/dump/fa2a2b23-33f3-4b9f-865b-56fb8f983d08?format=json
-INCOME_PLANNED_URL[2022]=https://opendata.reus.cat/datastore/dump/ae610172-4597-4bac-80c5-3ce50220f7a9?format=json&bom=true
+INCOME_PLANNED_URL[2022]=https://opendata.reus.cat/datastore/dump/ae610172-4597-4bac-80c5-3ce50220f7a9?format=json
 
 INCOME_EXECUTED_URL[2018]=https://opendata.reus.cat/datastore/dump/c3271b2d-1a4e-4dce-9b9f-d22f40b5fa65?format=json
 INCOME_EXECUTED_URL[2019]=https://opendata.reus.cat/datastore/dump/37b1baba-c07f-4459-b3bc-63f67c0444d2?format=json
 INCOME_EXECUTED_URL[2020]=https://opendata.reus.cat/datastore/dump/6ff99726-9564-4c1e-9c6d-6ddf4cd5c802?format=json
 INCOME_EXECUTED_URL[2021]=https://opendata.reus.cat/datastore/dump/7e5e556c-6ef0-4815-a53a-9b16c451d3c6?format=json
-INCOME_EXECUTED_URL[2022]=https://opendata.reus.cat/datastore/dump/431d4cd8-b2e8-4dd1-842d-f13fe46c12b9?format=json&bom=true
+INCOME_EXECUTED_URL[2022]=https://opendata.reus.cat/datastore/dump/431d4cd8-b2e8-4dd1-842d-f13fe46c12b9?format=json
 
 BUDGETS_UPDATED_DATE_DATASET_URL=https://opendata.reus.cat/api/3/action/package_show?id=seguiment-pressupostari-de-despeses-de-l-ajuntament-de-reus
 ## End data files
